@@ -1,9 +1,9 @@
 package AdderSubtractor;
 
 public class Subtractor implements Runnable {
-    private Count count;
+    private AdderSubtractor.Count count;
 
-    public Subtractor(Count count) {
+    public Subtractor(AdderSubtractor.Count count) {
         this.count = count;
     }
 

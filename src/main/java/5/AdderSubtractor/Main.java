@@ -2,10 +2,10 @@ package AdderSubtractor;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-        Count count = new Count();
+        AdderSubtractor.Count count = new AdderSubtractor.Count();
 
-        Adder adder = new Adder(count);
-        Subtractor subtractor = new Subtractor(count);
+        AdderSubtractor.Adder adder = new AdderSubtractor.Adder(count);
+        AdderSubtractor.Subtractor subtractor = new AdderSubtractor.Subtractor(count);
 
         Thread t1 = new Thread(adder);
         Thread t2 = new Thread(subtractor);

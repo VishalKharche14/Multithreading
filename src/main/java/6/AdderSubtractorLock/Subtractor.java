@@ -2,11 +2,11 @@ package AdderSubtractorLock;
 
 import java.util.concurrent.locks.Lock;
 
-public class Adder implements Runnable{
-    private Count count;
+public class Subtractor implements Runnable {
+    private AdderSubtractorLock.Count count;
     private Lock lock;
 
-    public Adder(Count count, Lock lock) {
+    public Subtractor(AdderSubtractorLock.Count count, Lock lock) {
         this.count = count;
         this.lock = lock;
     }
@@ -15,7 +15,7 @@ public class Adder implements Runnable{
     public void run() {
         for(int i=1; i<1001; i++){
             lock.lock();
-            count.addValue(i);
+            count.addValue(-i);
             lock.unlock();
         }
     }
