@@ -10,13 +10,12 @@ public class Consumer implements Runnable{
     @Override
     public void run() {
         while (true){
-
+            try {
+                Thread.sleep(50);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
             if(shop.size > 0){
-                try {
-                    Thread.sleep(50);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
                 shop.size -= 1;
                 System.out.println("Buying Clothes, Now Shop has "+ shop.size + " clothes");
             }
